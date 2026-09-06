@@ -24,6 +24,72 @@
 
 <body>
 
+    <!-- MOBILE NAVBAR -->
+
+<div class="mobile-navbar">
+
+    <button
+        class="mobile-menu-btn"
+        onclick="toggleMobileMenu()"
+    >
+        ☰
+    </button>
+
+    <strong>
+        Ethical Warrior
+    </strong>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+
+<div
+    id="mobileMenu"
+    class="mobile-menu"
+>
+
+    <a href="dashboard.html">
+        🏠 Dashboard
+    </a>
+
+    <a href="people.html">
+        👥 People
+    </a>
+
+    <a href="points.html">
+        ⭐ Points
+    </a>
+
+    <a href="projects.html">
+        📁 Projects
+    </a>
+
+    <a href="departments.html">
+        🏢 Departments
+    </a>
+
+    <a href="chat.html">
+        💬 Chat
+    </a>
+
+    <a href="admin.html">
+        🛡️ Management
+    </a>
+
+    <a href="settings.html">
+        ⚙️ Settings
+    </a>
+
+    <button
+        onclick="logout()"
+        class="mobile-logout"
+    >
+        ↪ Logout
+    </button>
+
+</div>
+
 <div class="app">
 
 
@@ -284,7 +350,7 @@
 
 </div>
 
-
+<script src="js/mobile.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
