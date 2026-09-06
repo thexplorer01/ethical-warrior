@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Management - Ethical Warrior</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">EW</div>
+
+            <div>
+                <strong>Ethical Warrior</strong>
+                <small>Corporate System</small>
+            </div>
+        </div>
+
+        <nav>
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <a href="people.html" class="nav-link">
+                👥 People
+            </a>
+
+            <a href="points.html" class="nav-link">
+                ⭐ Points
+            </a>
+
+
+            <p class="nav-title">WORK</p>
+
+            <a href="projects.html" class="nav-link">
+                📁 Projects
+            </a>
+
+            <a href="departments.html" class="nav-link">
+                🏢 Departments
+            </a>
+
+            <a href="chat.html" class="nav-link">
+                💬 Chat
+            </a>
+
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="admin.html" class="nav-link active">
+                🛡️ Management
+            </a>
+
+
+            <p class="nav-title">OTHER</p>
+
+            <a href="notifications.html" class="nav-link">
+                🔔 Notifications
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+
+        <button id="logoutBtn" class="logout-btn">
+            ↪ Logout
+        </button>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="company-name">
+                    ETHICAL WARRIOR
+                </p>
+
+                <h1>
+                    Management
+                </h1>
+
+                <p class="page-description">
+                    Manage company members and points
+                </p>
+
+            </div>
+
+            <div class="user-avatar" id="avatar">
+                ?
+            </div>
+
+        </header>
+
+
+        <!-- SEARCH -->
+
+        <div class="panel management-search">
+
+            <input
+                type="text"
+                id="memberSearch"
+                placeholder="Search member..."
+            >
+
+        </div>
+
+
+        <!-- MEMBERS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    Team Members
+                </h2>
+
+            </div>
+
+
+            <div
+                id="adminPeopleList"
+                class="people-list"
+            >
+
+                Loading members...
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- POINT MODAL -->
+
+<div
+    id="pointModal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Update Points
+                </h2>
+
+                <p id="selectedMemberName">
+
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="adminPointsForm">
+
+            <label>
+                Action
+            </label>
+
+            <select id="adminPointAction">
+
+                <option value="add">
+                    Add Points
+                </option>
+
+                <option value="remove">
+                    Remove Points
+                </option>
+
+            </select>
+
+
+            <label>
+                Amount
+            </label>
+
+            <input
+                type="number"
+                id="adminPointAmount"
+                min="1"
+                required
+            >
+
+
+            <label>
+                Reason
+            </label>
+
+            <input
+                type="text"
+                id="adminPointReason"
+                required
+            >
+
+
+            <label>
+                Category
+            </label>
+
+            <select id="adminPointCategory">
+
+                <option value="Custom">
+                    Custom
+                </option>
+
+                <option value="Project">
+                    Project
+                </option>
+
+                <option value="Teamwork">
+                    Teamwork
+                </option>
+
+                <option value="Achievement">
+                    Achievement
+                </option>
+
+                <option value="Management">
+                    Management
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="btn full"
+            >
+
+                Update Points
+
+            </button>
+
+
+            <p id="adminPointsMessage">
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- DEPARTMENT MODAL -->
+
+<div id="departmentAssignModal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Assign Department</h2>
+
+                <p id="departmentMemberName">
+                    Select department
+                </p>
+            </div>
+
+            <button
+                id="closeDepartmentAssignModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="assignDepartmentForm">
+
+            <label>Department</label>
+
+            <select
+                id="departmentSelect"
+                required
+            >
+                <option value="">
+                    Loading departments...
+                </option>
+            </select>
+
+
+            <button
+                type="submit"
+                class="btn full"
+            >
+                Assign Department
+            </button>
+
+            <p id="assignDepartmentMessage"></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

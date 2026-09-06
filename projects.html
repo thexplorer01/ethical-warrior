@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects - Ethical Warrior</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">EW</div>
+
+            <div>
+                <strong>Ethical Warrior</strong>
+                <small>Corporate System</small>
+            </div>
+        </div>
+
+        <nav>
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <a href="people.html" class="nav-link">
+                👥 People
+            </a>
+
+            <a href="points.html" class="nav-link">
+                ⭐ Points
+            </a>
+
+
+            <p class="nav-title">WORK</p>
+
+            <a href="projects.html" class="nav-link active">
+                📁 Projects
+            </a>
+
+            <a href="departments.html" class="nav-link">
+                🏢 Departments
+            </a>
+
+            <a href="chat.html" class="nav-link">
+                💬 Chat
+            </a>
+
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="admin.html" class="nav-link">
+                🛡️ Management
+            </a>
+
+
+            <p class="nav-title">OTHER</p>
+
+            <a href="notifications.html" class="nav-link">
+                🔔 Notifications
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            ↪ Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="company-name">
+                    ETHICAL WARRIOR
+                </p>
+
+                <h1>
+                    Projects
+                </h1>
+
+                <p class="page-description">
+                    Manage company projects and teams
+                </p>
+            </div>
+
+            <button
+                id="addProjectBtn"
+                class="btn"
+            >
+                + Add Project
+            </button>
+
+        </header>
+
+
+        <!-- PROJECTS -->
+
+        <div
+            id="projectsList"
+            class="projects-grid"
+        >
+            Loading projects...
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- CREATE PROJECT MODAL -->
+
+<div id="projectModal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Create Project</h2>
+
+                <p>
+                    Add a new company project
+                </p>
+            </div>
+
+            <button
+                id="closeProjectModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="projectForm">
+
+            <label>
+                Project Name
+            </label>
+
+            <input
+                type="text"
+                id="projectName"
+                placeholder="Example: Company Website"
+                required
+            >
+
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                id="projectDescription"
+                placeholder="Describe the project..."
+            ></textarea>
+
+
+            <label>
+                Department
+            </label>
+
+            <select
+                id="projectDepartment"
+            >
+                <option value="">
+                    No Department
+                </option>
+            </select>
+
+
+            <label>
+                Project Manager
+            </label>
+
+            <select
+                id="projectManager"
+            >
+                <option value="">
+                    No Manager
+                </option>
+            </select>
+
+
+            <label>
+                Status
+            </label>
+
+            <select id="projectStatus">
+
+                <option value="Planning">
+                    Planning
+                </option>
+
+                <option value="Active">
+                    Active
+                </option>
+
+                <option value="On Hold">
+                    On Hold
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="btn full"
+            >
+                Create Project
+            </button>
+
+            <p id="projectMessage"></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- PROJECT TEAM MODAL -->
+
+<div id="projectTeamModal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Project Team</h2>
+
+                <p id="projectTeamName">
+                    Manage project members
+                </p>
+            </div>
+
+            <button
+                id="closeProjectTeamModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="projectMembersList">
+
+            Loading team...
+
+        </div>
+
+
+        <div
+            id="addMemberSection"
+            class="add-member-section"
+        >
+
+            <h3>Add Member</h3>
+
+            <select id="projectMemberSelect">
+
+                <option value="">
+                    Select member
+                </option>
+
+            </select>
+
+
+            <button
+                id="addProjectMemberBtn"
+                class="btn full"
+            >
+                Add Member
+            </button>
+
+        </div>
+
+
+        <p id="projectTeamMessage"></p>
+
+    </div>
+
+</div>
+
+<!-- PROJECT DETAILS MODAL -->
+
+<div id="projectDetailsModal" class="modal hidden">
+
+    <div class="modal-box project-details-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="company-name">
+                    PROJECT DETAILS
+                </p>
+
+                <h2 id="detailProjectName">
+                    Loading...
+                </h2>
+
+            </div>
+
+            <button
+                id="closeProjectDetailsModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="project-details-content">
+
+            <div class="detail-item">
+
+                <span>STATUS</span>
+
+                <strong id="detailProjectStatus">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span>DEPARTMENT</span>
+
+                <strong id="detailProjectDepartment">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <span>PROJECT MANAGER</span>
+
+                <strong id="detailProjectManager">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <span>DESCRIPTION</span>
+
+                <p id="detailProjectDescription">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="project-team-details">
+
+                <h3>
+                    👥 Team Members
+                </h3>
+
+                <div id="detailProjectMembers">
+
+                    Loading members...
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PROJECT DETAILS MODAL -->
+
+<div id="projectDetailsModal" class="modal hidden">
+
+    <!-- entire modal content here -->
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/projects.js"></script>
+
+</body>
+
+</html>

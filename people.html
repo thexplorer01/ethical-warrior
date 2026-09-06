@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - Ethical Warrior</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">EW</div>
+            <div>
+                <strong>Ethical Warrior</strong>
+                <small>Corporate System</small>
+            </div>
+        </div>
+
+        <nav>
+            <p class="nav-title">MAIN</p>
+            <a href="dashboard.html" class="nav-link">🏠 Dashboard</a>
+            <a href="people.html" class="nav-link active">👥 People</a>
+            <a href="points.html" class="nav-link">⭐ Points</a>
+
+            <p class="nav-title">WORK</p>
+            <a href="projects.html" class="nav-link">📁 Projects</a>
+            <a href="departments.html" class="nav-link">🏢 Departments</a>
+            <a href="chat.html" class="nav-link">💬 Chat</a>
+
+            <p class="nav-title">OTHER</p>
+            <a href="notifications.html" class="nav-link">🔔 Notifications</a>
+            <a href="settings.html" class="nav-link">⚙️ Settings</a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">↪ Logout</button>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="company-name">ETHICAL WARRIOR</p>
+                <h1>People</h1>
+            </div>
+
+            <div class="user-avatar" id="avatar">?</div>
+        </header>
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Company Members</h2>
+                    <p class="page-description">
+                        Everyone in Ethical Warrior
+                    </p>
+                </div>
+            </div>
+
+            <div id="peopleList" class="people-list">
+                Loading members...
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

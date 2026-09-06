@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ethical Warrior</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">EW</div>
+            <div>
+                <strong>Ethical Warrior</strong>
+                <small>Corporate System</small>
+            </div>
+        </div>
+
+        <nav>
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="dashboard.html" class="nav-link active">
+                🏠 Dashboard
+            </a>
+
+            <a href="people.html" class="nav-link">
+                👥 People
+            </a>
+
+            <a href="points.html" class="nav-link">
+                ⭐ Points
+            </a>
+
+            <p class="nav-title">WORK</p>
+
+            <a href="projects.html" class="nav-link">
+                📁 Projects
+            </a>
+
+            <a href="departments.html" class="nav-link">
+                🏢 Departments
+            </a>
+
+            <a href="chat.html" class="nav-link">
+                💬 Chat
+            </a>
+
+            <p class="nav-title">OTHER</p>
+
+            <a href="notifications.html" class="nav-link">
+                🔔 Notifications
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            ↪ Logout
+        </button>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="company-name">ETHICAL WARRIOR</p>
+                <h1 id="greeting">Loading...</h1>
+            </div>
+
+            <div class="user-avatar" id="avatar">
+                ?
+            </div>
+        </header>
+
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>My Points</span>
+                <strong id="points">0</strong>
+                <small>Current score</small>
+            </div>
+
+            <div class="stat-card">
+                <span>Status</span>
+                <strong id="status">Member</strong>
+                <small>Current position</small>
+            </div>
+
+            <div class="stat-card">
+                <span>Department</span>
+                <strong id="department">Not assigned</strong>
+                <small>Your department</small>
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Quick Actions</h2>
+                </div>
+
+                <div class="quick-actions">
+
+                    <a href="points.html" class="action-card">
+                        <span>⭐</span>
+                        <strong>Manage Points</strong>
+                        <small>Add or remove your points</small>
+                    </a>
+
+                    <a href="projects.html" class="action-card">
+                        <span>📁</span>
+                        <strong>View Projects</strong>
+                        <small>Check your projects</small>
+                    </a>
+
+                    <a href="chat.html" class="action-card">
+                        <span>💬</span>
+                        <strong>Open Chat</strong>
+                        <small>Talk with your team</small>
+                    </a>
+
+                    <a href="people.html" class="action-card">
+                        <span>👥</span>
+                        <strong>People</strong>
+                        <small>View company members</small>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Recent Activity</h2>
+                    <a href="points.html">View all</a>
+                </div>
+
+                <div id="recentActivity">
+                    <p class="empty-state">
+                        No recent activity.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

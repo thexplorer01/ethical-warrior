@@ -148,7 +148,7 @@ loadDashboard();
 
 // PEOPLE
 
-aasync function loadPeople() {
+async function loadPeople() {
 
     const peopleList = document.getElementById("peopleList");
 

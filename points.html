@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Points - Ethical Warrior</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">EW</div>
+            <div>
+                <strong>Ethical Warrior</strong>
+                <small>Corporate System</small>
+            </div>
+        </div>
+
+        <nav>
+            <p class="nav-title">MAIN</p>
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <a href="people.html" class="nav-link">
+                👥 People
+            </a>
+
+            <a href="points.html" class="nav-link active">
+                ⭐ Points
+            </a>
+
+            <p class="nav-title">WORK</p>
+
+            <a href="projects.html" class="nav-link">
+                📁 Projects
+            </a>
+
+            <a href="departments.html" class="nav-link">
+                🏢 Departments
+            </a>
+
+            <a href="chat.html" class="nav-link">
+                💬 Chat
+            </a>
+
+            <p class="nav-title">OTHER</p>
+
+            <a href="notifications.html" class="nav-link">
+                🔔 Notifications
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            ↪ Logout
+        </button>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="company-name">ETHICAL WARRIOR</p>
+                <h1>Points</h1>
+            </div>
+
+            <div class="user-avatar" id="avatar">?</div>
+
+        </header>
+
+
+        <section class="points-layout">
+
+            <!-- CURRENT POINTS -->
+
+            <div class="panel points-summary">
+
+                <p>YOUR CURRENT POINTS</p>
+
+                <h2 id="currentPoints">
+                    0
+                </h2>
+
+                <span>Total performance points</span>
+
+            </div>
+
+
+            <!-- ADD / REMOVE -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Update Points</h2>
+                </div>
+
+                <form id="pointsForm">
+
+                    <label>Action</label>
+
+                    <select id="pointAction">
+
+                        <option value="add">
+                            Add Points
+                        </option>
+
+                        <option value="remove">
+                            Remove Points
+                        </option>
+
+                    </select>
+
+
+                    <label>Amount</label>
+
+                    <input
+                        type="number"
+                        id="pointAmount"
+                        min="1"
+                        placeholder="Enter amount"
+                        required
+                    >
+
+
+                    <label>Reason</label>
+
+                    <input
+                        type="text"
+                        id="pointReason"
+                        placeholder="Why are you changing points?"
+                        required
+                    >
+
+
+                    <label>Category</label>
+
+                    <select id="pointCategory">
+
+                        <option value="Custom">
+                            Custom
+                        </option>
+
+                        <option value="Project">
+                            Project
+                        </option>
+
+                        <option value="Assignment">
+                            Assignment
+                        </option>
+
+                        <option value="Teamwork">
+                            Teamwork
+                        </option>
+
+                        <option value="Achievement">
+                            Achievement
+                        </option>
+
+                    </select>
+
+
+                    <button type="submit" class="btn full">
+                        Update Points
+                    </button>
+
+                    <p id="pointsMessage"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTORY -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Point History</h2>
+                    <p class="page-description">
+                        Your recent point activity
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="pointsHistory">
+
+                Loading history...
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/points.js"></script>
+
+</body>
+</html>
